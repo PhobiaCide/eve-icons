@@ -29,15 +29,24 @@
 
     /**Light Mode**/
     body {
-      --primary: #6200ee;
-      --primary-variant: #3700b3;
-      --secondary: #03dac6;
-      --secondary-variant: #018786;
-      --error-msg: #b00020;
-      --bg-color: #ffffff;
-      --fg-color: #000000;
-      background-color: #ffffff;
-      color: #000000;
+      filter: brightness(1.2) contrast(1.2);
+      --primary: rgb(98, 0, 238);
+      --primary-variant: rgb(55, 0, 179);
+      --secondary: rgb(3, 218, 198);
+      --secondary-variant: rgb(1, 135, 134);
+      --error-msg: rgb(176, 0, 32);
+      --bg-color: rgb(255, 255, 255);
+      --fg-color: rgb(0, 0, 0);
+      --drop-shadow:
+        1px 2px 3px 0 rgba(0, 0, 0, 0.3),
+        2px 4px 6px 0 rgba(0, 0, 0, 0.2),
+        4px 8px 12px 0 rgba(0, 0, 0, 0.1);
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font: 12px system-ui;
+      //background-image: linear-gradient(90deg, var(--secondary-variant) 0%, var(--secondary) 15%, var(--secondary) 85%, var(--secondary-variant) 100%);
     }
 
     body .shape {
@@ -45,28 +54,26 @@
       stroke: url(#cheap-champagne);
     }
 
-    body img {
-      filter: brightness(1) contrast(1);
+
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
     }
 
     /**Dark Mode**/
     body.dark-mode {
       --primary: #bb86fc;
-      --primary-varriant: #3700b3;
+      --primary-variant: #3700b3;
       --secondary: #03dac6;
       --secondary-variant: #03dac6;
-      --errormsg: #cf9979;
+      --error-msg: #cf9979;
       --bg-color: #121212;
       --fg-color: #ffffff;
       background-color: #121212;
-      color: #ffffff;
-    }
-
-    body {
-      text-decoration: none;
-      font-family: Arial, Helvetica, sans-serif;
-      font: 12px system-ui;
-      background-image: linear-gradient(0deg, var(--bg-color) 10%, var(--bg-color) 50%, var(--bg-color) 90%);
+      color: #000;
+      filter: invert();
     }
 
     body.dark-mode .shape {
@@ -74,26 +81,30 @@
       stroke: url(#voice-call);
     }
 
-    body.dark-mode img {
-      filter: brightness(.8) contrast(1.2);
-    }
-
     .icon {
       display: inline-block;
       width: 5rem;
       height: 5rem;
-      transition: 300ms;
+      transition: 1000ms;
     }
 
     .icon:hover {
-      transform: scale(4, 4);
+      transform: scale(5, 5);
     }
 
     .header {
-      height: 7rem;
-      overflow: hidden;
-      padding: 4rem;
-      background-color: var(--bg-color);
+      padding: 1em;
+    }
+
+    .header h1 {
+      margin: .1em;
+      font-size: 4em;
+      margin: 0em 12em 0 0;
+      padding: .5em;
+      color: #fff;
+      background-image: linear-gradient(3deg, var(--primary) 0%, var(--primary-variant) 30%, var(--primary-variant) 70%, var(--primary) 100%);
+      border-radius: 10px 10px 10px 10px;
+      box-shadow: var(--drop-shadow);
     }
 
     .header-right {
@@ -101,6 +112,7 @@
     }
 
     .dark-light {
+
       background-color: var(--secondary);
       color: black;
       border: none;
@@ -108,17 +120,22 @@
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
+      font-size: 2em;
       cursor: pointer;
-      box-shadow: -1px -1px 8px 0 rgba(0, 0, 0, 0.3), 1px 1px 8px 0 rgba(0, 0, 0, 0.3);
+      border-radius: 2em;
+      box-shadow: var(--drop-shadow);
+    }
+
+    .dark-light:hover {
+      filter: blur(.1px);
+      transform: scale(2, 2);
     }
 
     .content {
-      padding: 2rem;
-      border-radius: 2rem;
-      background-image: linear-gradient(10deg, var(--primary) 0%, var(--primary-variant) 20%, var(--primary-variant) 80%, var(--primary) 100%);
-      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+      padding: 5em;
+      border-radius: 2em;
+      background-image: linear-gradient(0deg, var(--primary) 0%, var(--primary-variant) 15%, var(--primary-variant) 85%, var(--primary) 100%);
+      box-shadow: var(--drop-shadow);
     }
 
     .container {
@@ -135,13 +152,16 @@
     }
 
     .footer {
+      color: var(--bg-color);
       margin: 4rem;
       padding: 2rem;
       float: right;
-      border-color: var(--fg-color);
-      border-width: 1 px;
-      border-radius: 1rem;
-      background-color: var(--primary-variant)
+      border-color: var(--primary);
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 2em;
+      background-color: var(--primary-variant);
+      box-shadow: var(--drop-shadow);
     }
   </style>
 </head>
@@ -221,14 +241,18 @@
 
   <div class="header">
     <div class="header-right">
-      <br><br>
-      <div><button class="dark-light" onclick="darkMode()">Toggle dark mode</button></div>
+      <button class="dark-light" onclick="darkMode()">Toggle dark mode</button>
     </div>
-    <h1>Eve Icon Demo</h1>
+    <h1>.svg Eve Online Icons</h1>
+    <hr>
     <br>
-    <h2>This is a Demo of the scalability and colorability of the Eve Online Icons.</h2>
+
+    <h2>Converted from the .png files release by CCP Games and optimized by hand</h2>
+
+    <h3>Hover the mouse over any icon to check out the .svg Eve Online Icons' scalability.</h3>
+    <h3>They have potential to take color. They are shown here with metallic gradients.</h3>
   </div>
-  </div>
+
   <div class="content">
     <div class="container">
       <div>
