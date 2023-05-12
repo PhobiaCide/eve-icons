@@ -15,3 +15,8 @@ function include(filePath) {
   request.open('GET', filePath, true);
   request.send();
 }
+
+document.querySelector(`input`).onclick = () =>
+	(document.body.hasAttribute(`class`)) 
+  	? document.body.removeAttribute(`class`)
+    : document.body.setAttribute(`class`, `blur-bgimage`); 
