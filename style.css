@@ -110,14 +110,17 @@ body.dark-mode {
   --secondary-border: rgba(var(--secondary), 1);
   filter: invert();
 }
+
 body.dark-mode .shape {
   /*filter: invert();*/
 }
+
 ul {
   list-style-type: none;
   font-size: 2.5vh;
   padding: 2.5vh;
 }
+
 .icon {
   margin: -1vh;
   width: 9vw;
@@ -125,21 +128,29 @@ ul {
   transition: 300ms;
   filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.6));
 }
+
 .icon:hover {
   transform: scale(5, 5);
   transition: 300ms;
-
-  border-radius: 1px;
-  outline-style: outset;
-  outline-width: 2px;
-  outline-offset: -2px;
-  outline-color: rgba(0, 0, 0, 0.1);
 }
+
 .container div:hover {
   position: static;
   left: 50%;
   z-index: 1;
 }
+
+.container:hover {
+  background-image: var(--primary-background-gradient);
+}
+mark {
+  background-image: var(--primary-background-gradient);
+  border-radius: 4px;
+  padding: 1px;
+  font-size: 3vh;
+  color: antiquewhite;
+}
+
 header {
   position: relative;
   padding-left: 3vw;
@@ -149,16 +160,20 @@ header {
   color: whitesmoke;
   background-image: var(--primary-background-gradient);
 }
+
 header h1 {
   margin: 1vw;
-  font-size: 4vw;
+  font-size: 4vh;
 }
+
 #dark-light-toggle {
   margin: 0 5vw;
 }
+
 #dark-light-toggle:hover {
   transform: scale(1, 1.02);
 }
+
 main {
   width: 100vw;
   border: var(--primary-border);
@@ -230,8 +245,8 @@ button {
 .button-front {
   display: block;
   position: relative;
-  padding: 4vh;
-  border: 4px outset var(--primary-border);
+  padding: 3vh;
+  border: 1vh outset var(--primary-border);
   border-radius: 100%;
   font-size: 4vh;
   text-align: center;
@@ -256,7 +271,7 @@ button:hover .button-shadow {
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
 button:active .button-shadow {
-  transform: translateY(3px) translateX(3px) scale(1, 1.02);
+  transform: translateY(3px) translateX(3px) scale(1, 1.01);
   transition: transform 30ms;
 }
 button:focus:not(:focus-visible) {
