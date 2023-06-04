@@ -3,7 +3,8 @@
   padding: 0;
 }
 html {
-  width: 105w;
+  width: 100vw;
+  position: relative;
   overflow-x: hidden;
 }
 /*************
@@ -18,11 +19,13 @@ body {
   --error-msg: 176, 0, 32;
   --bg-color: 255, 255, 255;
   --fg-color: 0, 0, 0;
-  --drop-shadow: 2px 2px 1px rgba(var(--fg-color), 0.1),
-    4px 4px 2px rgba(var(--fg-color), 0.15),
+
+  --drop-shadow: 2px 2px 1px rgba(var(--fg-color), 0.3),
+    4px 4px 2px rgba(var(--fg-color), 0.25),
     8px 8px 4px rgba(var(--fg-color), 0.2),
-    16px 16px 8px rgba(var(--fg-color), 0.25),
-    32px 32px 16px rgba(var(--fg-color), 0.3);
+    16px 16px 8px rgba(var(--fg-color), 0.15),
+    32px 32px 16px rgba(var(--fg-color), 0.1);
+
   --primary-background-gradient: linear-gradient(
     45deg,
     rgba(var(--primary), 1) 0%,
@@ -30,6 +33,7 @@ body {
     rgba(var(--primary-variant), 1) 60%,
     rgba(var(--primary), 1) 100%
   );
+
   --secondary-background-gradient: linear-gradient(
     0deg,
     rgba(var(--secondary-variant), 1) 11%,
@@ -37,19 +41,23 @@ body {
     rgba(var(--secondary), 1) 77%,
     rgba(var(--secondary), 1) 99%
   );
+
   --primary-border: rgba(var(--primary), 1);
+
   --secondary-border: 4px outset rgba(var(--secondary), 1);
+
   --border-radius: 4vh;
+
   background-color: rgba(var(--bg-color), 1);
   color: rgba(var(--fg-color), 1);
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
-  font: 12px system-ui;
+  font: 6vh system-ui;
   background-image: var(--secondary-background-gradient);
 }
 body .shape {
-  fill: url(#dawn-operation);
-  stroke: url(#dawn-operation);
+  fill: url(#black-pepper);
+  stroke: url(#black-pepper);
 }
 hr {
   border-top: 1px ridge rgba(var(--primary), 1);
@@ -75,11 +83,13 @@ body.dark-mode {
   --error-msg: 207, 153, 121;
   --bg-color: 18, 18, 18;
   --fg-color: 0, 0, 0;
-  background-color: rgba(18, 18, 18, 1);
+  background-color: rgba(33, 33, 33, 1);
   color: rgba(var(--fg-color), 1);
+
   --drop-shadow: 1px 1px 2px rgba(var(--fg-color), 0.2),
     2px 2px 4px rgba(var(--fg-color), 0.4),
     3px 3px 6px rgba(var(--fg-color), 0.6);
+
   --primary-background-gradient: linear-gradient(
     135deg,
     rgba(var(--primary), 1) 0%,
@@ -101,32 +111,40 @@ body.dark-mode {
   filter: invert();
 }
 body.dark-mode .shape {
-  fill: url(#wedding-song);
-  stroke: url(#fear-of-swedish);
-  /*filter:invert();*/
+  /*filter: invert();*/
 }
 ul {
-  font-size: 1.8vw;
-  padding: 2vw;
+  list-style-type: none;
+  font-size: 2.5vh;
+  padding: 2.5vh;
 }
 .icon {
-  margin: auto;
-  width: 10vw;
-  height: 10vw;
-  transition: 800ms;
-  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
-  z-index: 0;
+  margin: -1vh;
+  width: 9vw;
+  height: 9vw;
+  transition: 300ms;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.6));
 }
 .icon:hover {
-  transform: scale(4, 4);
-  transition: 600ms;
-  z-index: 10;
+  transform: scale(5, 5);
+  transition: 300ms;
+
+  border-radius: 1px;
+  outline-style: outset;
+  outline-width: 2px;
+  outline-offset: -2px;
+  outline-color: rgba(0, 0, 0, 0.1);
+}
+.container div:hover {
+  position: static;
+  left: 50%;
+  z-index: 1;
 }
 header {
   position: relative;
-  padding-left: 5vw;
-  width: 110vw;
-  left: -5vw;
+  padding-left: 3vw;
+  width: 100vw;
+  left: -3vw;
   box-shadow: var(--drop-shadow);
   color: whitesmoke;
   background-image: var(--primary-background-gradient);
@@ -161,13 +179,13 @@ td {
   /*grid-gap: 0rem;*/
 }
 .container > div {
-  padding: 3vw;
+  padding: 3vh;
   margin: 0vw;
 }
 footer {
-  font-size: 1.8vw;
+  font-size: 4vh;
   color: rgba(var(--color), 1);
-  margin: 4vw;
+  margin: 6vw;
   padding: 2vw;
   float: right;
   border: var(--primary-border);
@@ -175,10 +193,14 @@ footer {
   background-image: var(--primary-background-gradient);
   box-shadow: var(--drop-shadow);
 }
+footer li {
+  font-size: 2vh;
+}
 button {
-  width: 10vw;
+  width: auto;
+  height: auto;
   position: relative;
-  border-radius: var(--border-radius);
+  border-radius: 100%;
   background: transparent;
   padding: 0;
   cursor: pointer;
@@ -190,7 +212,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: var(--border-radius);
+  border-radius: 100%;
   background: hsl(0deg 0% 0% / 0.4);
   will-change: transform;
   transform: translateY(2px) translateX(2px);
@@ -202,16 +224,16 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: var(--border-radius);
+  border-radius: 100%;
   background-image: var(--primary-background-gradient);
 }
 .button-front {
   display: block;
   position: relative;
-  padding: 1rem;
-  border: 6px outset var(--primary-border);
-  border-radius: var(--border-radius);
-  font-size: 2vw;
+  padding: 4vh;
+  border: 4px outset var(--primary-border);
+  border-radius: 100%;
+  font-size: 4vh;
   text-align: center;
   text-decoration: none;
   color: white;
@@ -229,8 +251,8 @@ button:active .button-front {
   transition: transform 250ms;
 }
 button:hover .button-shadow {
-  filter: blur(0px);
-  transform: translateY(4px) translateX(4px) scale(1, 1.02);
+  filter: blur(1px);
+  transform: translateY(4px) translateX(4px) scale(1, 1.01);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
 button:active .button-shadow {
