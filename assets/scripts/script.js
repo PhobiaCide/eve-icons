@@ -5,7 +5,8 @@ function darkMode() {
   const buttonFront = toggleButton.getElementsByClassName('button-front')[0];
   const buttonLabel = buttonFront.innerText;
   console.log(buttonLabel);
-  buttonFront.innerText = (buttonLabel === 'dark') ? 'light' : 'dark';
+  const smallElement = document.getElementById('button-label-text')
+  smallElement.innerText = (buttonLabel === 'dark') ? 'light' : 'dark';
   html.removeAttribute('data-bs-theme');
   html.setAttribute('data-bs-theme', buttonFront.innerText);
 }

@@ -46,11 +46,13 @@
       href="./assets/styles/style.css"
     />
   </head>
-  <body class="text-body bg-body container-flui">
+
+  <body class="text-body bg-body">
     <nav
-      class="col-1 d-flex flex-row-reverse fixed-top text-end mt-5"
+      class="fixed-top text-end p-3"
       style="z-index: 10"
     >
+    
       <button
         id="color-mode-toggle"
         onclick="darkMode()"
@@ -58,15 +60,16 @@
       >
         <span class="button-shadow shadow"></span>
         <span class="button-edge bg-body"></span>
-        <span class="button-front border border-5 rounded-circle h3 p-2 bg-body"><small>dark</small></span>
+        <span class="button-front border border-5 rounded-circle h3 p-2 bg-body"><small id="button-label-text">dark</small></span>
       </button>
     </nav>
-    <main class="container text-center">
-      <header class="fixed-top border border-top-0 border-start-0 border-end-0 shadow bg-body" style="z-index: 5;">
-        <h1 class="display-1">Vectorized Eve Online Icons</h1>
-      </header>
-      <article class="">
-        <section class="">
+    <header class="border border-top-0 border-start-0 ps-5 pt-1">
+      <h1 class="display-1">Vectorized Eve Online Icons</h1>
+    </header>
+
+    <main>
+      <article>
+        <section>
           <ul>
             <li>Converted from official files</li>
             <li>Optimized SVG</li>
@@ -81,9 +84,9 @@
           <p>They are shown here with metallic gradients.</p>
         </section>
       </article>
-      <article class="">
+      <article class="p-5 text-center">
         <section class="">
-          <figure class="d-inline-block">
+          <figure class="d-inline-block border">
             <svg
               class="icon"
               viewBox="0 0 128 128"
@@ -1411,7 +1414,7 @@
           </figure>
         </section>
       </article>
-      <footer class="">
+      <footer>
         <ul>
           <li>© 2023 PhobiaCide</li>
           <li>Eve Icons are property of CCP</li>
@@ -1429,9 +1432,10 @@
           fetchpriority="auto"
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         ></script>
-        <script src="./assets/scripts/mode-toggle.js"></script>
+        <script src="./assets/scripts/script.js"></script>
       </div>
     </main>
+
     <!-- SVG icon defs -->
     <div id="svg-icon-defs">
       <svg

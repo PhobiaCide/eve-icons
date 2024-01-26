@@ -12,8 +12,8 @@ html {
 }
 
 html[data-bs-theme="light"] body .shape {
-  fill: url(#strong-glue);
-  stroke: url(#strong-glue);
+  fill: url(#sex-tape);
+  stroke: url(#moon-spot);
 }
 
 html[data-bs-theme="dark"] body .shape {
@@ -50,6 +50,7 @@ hr {
   height: calc(((1vw + 1vh + 1em + 1rem) / 4) * 4);
   transition: 1200ms;
   filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.8));
+  color:black;
 }
 
 .icon:hover {
@@ -72,7 +73,6 @@ mark {
 }
 
 #color-mode-toggle {
-
   border-top-right-radius: 0;
   padding: 0px;
   margin: 0;
