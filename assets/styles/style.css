@@ -1,0 +1,180 @@
+:root {
+  font-family: "Hind", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+  color: var(--text-body);
+  background-color: (--bg-body);
+}
+
+html[data-bs-theme="light"] body .shape {
+  fill: url(#strong-glue);
+  stroke: url(#strong-glue);
+}
+
+html[data-bs-theme="dark"] body .shape {
+  fill: url(#black-pepper);
+  stroke: url(#black-pepper);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Expletus Sans", cursive;
+}
+
+hr {
+  border-top: 1px ridge rgba(var(--primary), 1);
+  border-radius: 0 50px;
+  height: 0px;
+  outline-style: inset;
+  outline-width: 7px;
+  outline-color: rgba(var(--primary-variant), 1);
+  outline-offset: 0;
+  filter: blur(3px);
+  transform: scale(70, 0.3);
+  margin: 2vh 50%;
+}
+
+.icon {
+  margin: calc(((1vw + 1vh + 1em + 1rem) / 4) * 2);
+  width: calc(((1vw + 1vh + 1em + 1rem) / 4) * 4);
+  height: calc(((1vw + 1vh + 1em + 1rem) / 4) * 4);
+  transition: 1200ms;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.8));
+}
+
+.icon:hover {
+  transform: scale(5, 5);
+  transition: 300ms;
+}
+
+.container figure:hover {
+  position: static;
+  left: 50%;
+  z-index: 1;
+  background-image: none;
+}
+
+mark {
+  background-image: var(--primary-background-gradient);
+  border-radius: 4px;
+  padding: 1px;
+  font-size: 3vh;
+}
+
+#color-mode-toggle {
+
+  border-top-right-radius: 0;
+  padding: 0px;
+  margin: 0;
+}
+
+#color-mode-toggle:hover {
+  transform: scale(1.0, 1.0);
+}
+
+main {
+  width: 100vw;
+  margin-top: 20vh;
+  border: var(--primary-border);
+  background-image: var(--primary-background-gradient);
+  box-shadow: var(--drop-shadow);
+}
+
+main section {
+  margin-top: 0px;
+}
+
+/*
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+}
+.container > div {
+  padding: 3vh;
+  margin: 0vw;
+}
+*/
+footer {}
+
+button {
+  width: auto;
+  height: auto;
+  position: relative;
+  background: transparent;
+  padding: 0;
+  cursor: default;
+  transition: filter 150ms;
+}
+
+.button-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background: hsl(0deg 0% 0% / 0.4);
+  will-change: transform;
+  transform: translateY(2px) translateX(2px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.button-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.button-front {
+  display: block;
+  position: relative;
+  padding: 3vh;
+  border-radius: 100%;
+  font-size: 3em;
+  text-align: center;
+  text-decoration: none;
+  background-image: var(--primary-background-gradient);
+  will-change: transform;
+  transform: translateY(-2px);
+  transition: transform 350ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+button:hover .button-front {
+  transform: translateY(-3px);
+  transition: transform 350ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+button:active .button-front {
+  transform: translateY(0px);
+  transition: transform 30ms;
+}
+
+button:hover .button-shadow {
+  filter: blur(0px);
+  transform: translateY(3px) translateX(3px) scale(1, 1);
+  transition: transform 350ms cubic-bezier(0.8, 0.7, 0.2, 1.5);
+}
+
+button:active .button-shadow {
+  transform: translateY(0px) translateX(0px) scale(1, 1);
+  transition: transform 30ms;
+}
+
+button:focus:not(:focus-visible) {
+  outline: none;
+}
