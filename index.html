@@ -46,10 +46,9 @@
       href="./assets/styles/style.css"
     />
   </head>
-
-  <body class="text-body bg-body">
+  <body class="text-body bg-body container-flui">
     <nav
-      class="fixed-top text-end p-3"
+      class="col-1 d-flex flex-row-reverse fixed-top text-end mt-5"
       style="z-index: 10"
     >
       <button
@@ -62,13 +61,12 @@
         <span class="button-front border border-5 rounded-circle h3 p-2 bg-body"><small>dark</small></span>
       </button>
     </nav>
-    <header class="">
-      <h1 class="display-1">Vectorized Eve Online Icons</h1>
-    </header>
-
-    <main>
-      <article>
-        <section>
+    <main class="container text-center">
+      <header class="fixed-top border border-top-0 border-start-0 border-end-0 shadow bg-body" style="z-index: 5;">
+        <h1 class="display-1">Vectorized Eve Online Icons</h1>
+      </header>
+      <article class="">
+        <section class="">
           <ul>
             <li>Converted from official files</li>
             <li>Optimized SVG</li>
@@ -83,9 +81,9 @@
           <p>They are shown here with metallic gradients.</p>
         </section>
       </article>
-      <article class="p-5 text-center">
+      <article class="">
         <section class="">
-          <figure class="d-inline-block border">
+          <figure class="d-inline-block">
             <svg
               class="icon"
               viewBox="0 0 128 128"
@@ -1413,7 +1411,7 @@
           </figure>
         </section>
       </article>
-      <footer>
+      <footer class="">
         <ul>
           <li>© 2023 PhobiaCide</li>
           <li>Eve Icons are property of CCP</li>
@@ -1431,10 +1429,9 @@
           fetchpriority="auto"
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         ></script>
-        <script src="./assets/scripts/script.js"></script>
+        <script src="./assets/scripts/mode-toggle.js"></script>
       </div>
     </main>
-
     <!-- SVG icon defs -->
     <div id="svg-icon-defs">
       <svg
