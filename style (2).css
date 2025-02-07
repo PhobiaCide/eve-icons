@@ -1,10 +1,11 @@
-
 * {
+  font-family: "Hind", sans-serif;
   margin: 0;
   padding: 0;
 }
 html {
   width: 100vw;
+  position: relative;
   overflow-x: hidden;
 }
 /*************
@@ -12,25 +13,28 @@ html {
   **************/
 body {
   text-align: left;
-  --primary: 98, 0, 238;
+
+  --primary: 187, 134, 252;
   --primary-variant: 55, 0, 179;
-  --secondary: 3, 218, 198;
-  --secondary-variant: 1, 135, 134;
-  --error-msg: 176, 0, 32;
-  --bg-color: 255, 255, 255;
+  --secondary: 3, 216, 195;
+  --secondary-variant: 3, 218, 198;
+  --error-msg: 207, 153, 121;
+  --bg-color: 18, 18, 18;
   --fg-color: 0, 0, 0;
-  --drop-shadow: 2px 2px 1px rgba(var(--fg-color), 0.1),
-    4px 4px 2px rgba(var(--fg-color), 0.15),
-    8px 8px 4px rgba(var(--fg-color), 0.2),
-    16px 16px 8px rgba(var(--fg-color), 0.25),
-    32px 32px 16px rgba(var(--fg-color), 0.3);
+
+  --drop-shadow: 1px 1px 1px rgba(var(--fg-color), 0.5),
+    2px 2px 2px rgba(var(--fg-color), 0.4),
+    4px 4px 4px rgba(var(--fg-color), 0.3),
+    8px 8px 8px rgba(var(--fg-color), 0.2);
+
   --primary-background-gradient: linear-gradient(
-    45deg,
+    315deg,
     rgba(var(--primary), 1) 0%,
-    rgba(var(--primary-variant), 1) 40%,
-    rgba(var(--primary-variant), 1) 60%,
+    rgba(var(--primary-variant), 1) 74%,
+    rgba(var(--primary-variant), 1) 100%,
     rgba(var(--primary), 1) 100%
   );
+
   --secondary-background-gradient: linear-gradient(
     0deg,
     rgba(var(--secondary-variant), 1) 11%,
@@ -38,20 +42,37 @@ body {
     rgba(var(--secondary), 1) 77%,
     rgba(var(--secondary), 1) 99%
   );
+
   --primary-border: rgba(var(--primary), 1);
+
   --secondary-border: 4px outset rgba(var(--secondary), 1);
+
   --border-radius: 4vh;
+  height: 200%;
   background-color: rgba(var(--bg-color), 1);
   color: rgba(var(--fg-color), 1);
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
-  font: 12px system-ui;
+  font: 6vh system-ui;
   background-image: var(--secondary-background-gradient);
 }
-body .shape {
-  fill: url(#dawn-operation);
-  stroke: url(#dawn-operation);
+body.dark-mode {
+  filter: invert();
 }
+
+body .shape {
+  fill: url(#strong-glue);
+  stroke: url(#strong-glue);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Expletus Sans", cursive;
+}
+
 hr {
   border-top: 1px ridge rgba(var(--primary), 1);
   border-radius: 0 50px;
@@ -64,86 +85,68 @@ hr {
   transform: scale(70, 0.3);
   margin: 2vh 50%;
 }
-/************* 
-   * Dark Mode *
-   *************/
-body.dark-mode {
-  /* colors for dark mode(to be inverted) */
-  --primary: 187, 134, 252;
-  --primary-variant: 55, 0, 179;
-  --secondary: 3, 216, 195;
-  --secondary-variant: 3, 218, 198;
-  --error-msg: 207, 153, 121;
-  --bg-color: 18, 18, 18;
-  --fg-color: 0, 0, 0;
-  background-color: rgba(18, 18, 18, 1);
-  color: rgba(var(--fg-color), 1);
-  --drop-shadow: 1px 1px 2px rgba(var(--fg-color), 0.2),
-    2px 2px 4px rgba(var(--fg-color), 0.4),
-    3px 3px 6px rgba(var(--fg-color), 0.6);
-  --primary-background-gradient: linear-gradient(
-    135deg,
-    rgba(var(--primary), 1) 0%,
-    rgba(var(--primary-variant), 1) 40%,
-    rgba(var(--primary-variant), 1) 60%,
-    rgba(var(--primary), 1) 100%
-  );
-  --secondary-background-gradient: linear-gradient(
-    135deg,
-    rgba(var(--secondary), 1) 0%,
-    rgba(var(--secondary-variant), 1) 40%,
-    rgba(var(--secondary-variant), 1) 60%,
-    rgba(var(--secondary) 100%),
-    1
-  );
-  background-image: var(--secondary-background-gradient);
-  --primary-border: rgba(var(--primary), 1);
-  --secondary-border: rgba(var(--secondary), 1);
-  filter: invert();
-}
-body.dark-mode .shape {
-  fill: url(#wedding-song);
-  stroke: url(#fear-of-swedish);
-  /*filter:invert();*/
-}
-}
-}
+
 ul {
-  font-size: 1.8vw;
-  padding: 2vw;
+  list-style-type: none;
+  font-size: 3vh;
+}
+
+li {
+  padding: 0vh;
 }
 .icon {
-  margin: auto;
-  width: 10vw;
-  height: 10vw;
-  transition: 800ms;
-  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
-  z-index: 0;
+  margin: -1vh;
+  width: 9vw;
+  height: 9vw;
+  transition: 300ms;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.8));
 }
+
 .icon:hover {
-  transform: scale(4, 4);
-  transition: 600ms;
-  z-index: 10;
+  transform: scale(5, 5);
+  transition: 300ms;
 }
+
+.container div:hover {
+  position: static;
+  left: 50%;
+  z-index: 1;
+}
+
+.container:hover {
+  background-image: var(--primary-background-gradient);
+}
+mark {
+  background-image: var(--primary-background-gradient);
+  border-radius: 4px;
+  padding: 1px;
+  font-size: 3vh;
+  color: antiquewhite;
+}
+
 header {
   position: relative;
-  padding-left: 5vw;
-  width: 110vw;
-  left: -5vw;
+  padding-left: 3vw;
+  width: 100vw;
+  left: -3vw;
   box-shadow: var(--drop-shadow);
   color: whitesmoke;
   background-image: var(--primary-background-gradient);
 }
+
 header h1 {
   margin: 1vw;
-  font-size: 4vw;
+  font-size: 4vh;
 }
+
 #dark-light-toggle {
   margin: 0 5vw;
 }
+
 #dark-light-toggle:hover {
   transform: scale(1, 1.02);
 }
+
 main {
   width: 100vw;
   border: var(--primary-border);
@@ -156,21 +159,21 @@ table {
 td {
   padding: 2vw;
 }
-.d-grid{
+.container {
   display: grid;
   justify-content: center;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto;
   grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
   /*grid-gap: 0rem;*/
 }
 .container > div {
-  padding: 3vw;
+  padding: 3vh;
   margin: 0vw;
 }
 footer {
-  font-size: 1.8vw;
+  font-size: 4vh;
   color: rgba(var(--color), 1);
-  margin: 4vw;
+  margin: 6vw;
   padding: 2vw;
   float: right;
   border: var(--primary-border);
@@ -178,10 +181,14 @@ footer {
   background-image: var(--primary-background-gradient);
   box-shadow: var(--drop-shadow);
 }
+footer li {
+  font-size: 2vh;
+}
 button {
-  width: 10vw;
+  width: auto;
+  height: auto;
   position: relative;
-  border-radius: var(--border-radius);
+  border-radius: 100%;
   background: transparent;
   padding: 0;
   cursor: pointer;
@@ -193,7 +200,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: var(--border-radius);
+  border-radius: 100%;
   background: hsl(0deg 0% 0% / 0.4);
   will-change: transform;
   transform: translateY(2px) translateX(2px);
@@ -205,16 +212,17 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: var(--border-radius);
+  border-radius: 100%;
   background-image: var(--primary-background-gradient);
 }
 .button-front {
+  height: auto;
   display: block;
   position: relative;
-  padding: 1rem;
-  border: 6px outset var(--primary-border);
-  border-radius: var(--border-radius);
-  font-size: 2vw;
+  padding: 3vh;
+  border: 1vh outset var(--primary-border);
+  border-radius: 100%;
+  font-size: 4vh;
   text-align: center;
   text-decoration: none;
   color: white;
@@ -232,12 +240,12 @@ button:active .button-front {
   transition: transform 250ms;
 }
 button:hover .button-shadow {
-  filter: blur(0px);
-  transform: translateY(4px) translateX(4px) scale(1, 1.02);
+  filter: blur(1px);
+  transform: translateY(4px) translateX(4px) scale(1, 1.01);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
 button:active .button-shadow {
-  transform: translateY(3px) translateX(3px) scale(1, 1.02);
+  transform: translateY(3px) translateX(3px) scale(1, 1.01);
   transition: transform 30ms;
 }
 button:focus:not(:focus-visible) {

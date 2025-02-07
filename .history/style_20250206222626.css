@@ -1,10 +1,9 @@
-
 * {
   margin: 0;
   padding: 0;
 }
 html {
-  width: 100vw;
+  width: 105w;
   overflow-x: hidden;
 }
 /*************
@@ -106,8 +105,6 @@ body.dark-mode .shape {
   stroke: url(#fear-of-swedish);
   /*filter:invert();*/
 }
-}
-}
 ul {
   font-size: 1.8vw;
   padding: 2vw;
@@ -156,10 +153,10 @@ table {
 td {
   padding: 2vw;
 }
-.d-grid{
+.d-grid {
   display: grid;
   justify-content: center;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto;
   grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
   /*grid-gap: 0rem;*/
 }

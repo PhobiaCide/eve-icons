@@ -1,4 +1,4 @@
-const DEBUG = false;
+const DEBUG = true;
 
 class ModeHandler {
   constructor() {
@@ -90,7 +90,7 @@ class ModeHandler {
 // Initialize the mode handler
 new ModeHandler();
 
-DEBUG && document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Count all <li> items inside the specified list
   const list = document.getElementById("icons-list");
   const listItems = list.querySelectorAll("li");
@@ -117,7 +117,11 @@ DEBUG && document.addEventListener("DOMContentLoaded", function () {
     (icon) => !usedIcons.has(icon)
   );
 
-
+  // Get all <linearGradient> elements and extract their IDs
+  const gradients = document.querySelectorAll("svg defs linearGradient");
+  const gradientIds = [...gradients].map((gradient) => {
+    return `<div style="background: url(#${gradient.id}); background-size: cover;">${gradient.id}</div>`;
+  });
 
   // Display the number of icons in the page content
   const resultContainer = document.createElement("div");
@@ -131,28 +135,12 @@ DEBUG && document.addEventListener("DOMContentLoaded", function () {
       missingIcons.length > 0
         ? `<strong>Unused Icons:</strong> ${missingIcons.join(", ")}`
         : "✅ All icons are used!"
-    }`;
-  //  <br>
-  //  <strong>Gradients Found:</strong> ${
-  //    gradientIds.length
-  //  } | ${gradientIds.join("")}
-  //`;
-
-  // Get all <linearGradient> elements and extract their IDs
-  const gradients = document.querySelectorAll("svg defs linearGradient");
-  const gradientIds = [...gradients].map((gradient) => gradient.id);
-
-  // Create a div for each gradient ID
-  const gradientDivs = gradientIds.map((id) => {
-    const gradientDiv = document.createElement("div");
-    gradientDiv.style.background = `url(#${id})`;
-    gradientDiv.style.backgroundSize = "cover";
-    gradientDiv.innerText = id;
-    return gradientDiv;
-  });
-
-  // Append the gradient divs to the results container
-  gradientDivs.forEach((div) => resultContainer.appendChild(div));
+    }
+    <br>
+    <strong>Gradients Found:</strong> ${
+      gradientIds.length
+    } | ${gradientIds.join(", ")}
+  `;
   document.querySelector("main.container").prepend(resultContainer);
 
   // Apply gradient background to each gradient ID found

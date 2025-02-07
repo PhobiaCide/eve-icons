@@ -1,4 +1,4 @@
-const DEBUG = false;
+const DEBUG = true;
 
 class ModeHandler {
   constructor() {
@@ -90,7 +90,7 @@ class ModeHandler {
 // Initialize the mode handler
 new ModeHandler();
 
-DEBUG && document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Count all <li> items inside the specified list
   const list = document.getElementById("icons-list");
   const listItems = list.querySelectorAll("li");
@@ -131,12 +131,12 @@ DEBUG && document.addEventListener("DOMContentLoaded", function () {
       missingIcons.length > 0
         ? `<strong>Unused Icons:</strong> ${missingIcons.join(", ")}`
         : "✅ All icons are used!"
-    }`;
-  //  <br>
-  //  <strong>Gradients Found:</strong> ${
-  //    gradientIds.length
-  //  } | ${gradientIds.join("")}
-  //`;
+    }
+    <br>
+    <strong>Gradients Found:</strong> ${
+      gradientIds.length
+    } | ${gradientIds.join("")}
+  `;
 
   // Get all <linearGradient> elements and extract their IDs
   const gradients = document.querySelectorAll("svg defs linearGradient");
@@ -147,12 +147,11 @@ DEBUG && document.addEventListener("DOMContentLoaded", function () {
     const gradientDiv = document.createElement("div");
     gradientDiv.style.background = `url(#${id})`;
     gradientDiv.style.backgroundSize = "cover";
-    gradientDiv.innerText = id;
     return gradientDiv;
   });
 
   // Append the gradient divs to the results container
-  gradientDivs.forEach((div) => resultContainer.appendChild(div));
+  gradientDivs.forEach((div) => resultsContainer.appendChild(div));
   document.querySelector("main.container").prepend(resultContainer);
 
   // Apply gradient background to each gradient ID found

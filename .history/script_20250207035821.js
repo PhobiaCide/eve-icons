@@ -1,4 +1,4 @@
-const DEBUG = false;
+const DEBUG = true;
 
 class ModeHandler {
   constructor() {
@@ -90,7 +90,7 @@ class ModeHandler {
 // Initialize the mode handler
 new ModeHandler();
 
-DEBUG && document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Count all <li> items inside the specified list
   const list = document.getElementById("icons-list");
   const listItems = list.querySelectorAll("li");
