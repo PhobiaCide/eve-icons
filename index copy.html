@@ -12,7 +12,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&family=Hind&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+    <!-- Halfmoon CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/halfmoon.min.css"
+      rel="stylesheet"
+    />
+    <!-- Halfmoon modern core theme -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/cores/halfmoon.modern.css"
+      rel="stylesheet"
+    />
+
+  <link rel="stylesheet" href="./assets/styles/style.css" />
 </head>
 
 <body>
@@ -24,7 +35,7 @@
     <div class="container">
       <div>
         <svg class="icon" viewBox="0 0 128 128">
-          <use xlink:href="#achievements"></use>
+          <use xlink:href="#reply"></use>
         </svg>
       </div>
     </div>
@@ -33,33 +44,35 @@
   <!-- SVG icon defs -->
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0">
     <defs>
-      <symbol id="achievements">
-        <g>
-          <clipPath id="achievements-A">
-            <path d="M0 0h128v128H0z" />
-          </clipPath>
-          <g opacity=".9" clip-path="url(#achievements-A)">
-            <clipPath id="achievements-B">
-              <path d="M20.63 73.456h86.74v-39.9H20.63z" />
-            </clipPath>
-            <g clip-path="url(#achievements-B)">
-              <clipPath id="achievements-C">
-                <path
-                  d="M89.297 73.456c18.684-5.988 18.07-24.989 18.07-24.989V33.555H95.432l-.013 6.648h5.324v8.264c0 8.594-2.55 12.955-6.963 15.809l-.123.227a63.78 63.78 0 0 1-.953 2.646l-.1.263-.137.248zm-50.593 0c-18.685-5.988-18.071-24.989-18.071-24.989V33.555h11.936l.013 6.648h-5.324v8.264c0 8.594 2.55 12.955 6.963 15.809l.123.227c.307.92.627 1.798.952 2.646l.101.263.136.248z" />
-              </clipPath>
-              <g clip-path="url(#achievements-C)">
-                <rect x="20" y="33" width="88" height="41" class="shape" />
-              </g>
+      <symbol id="reply">
+        <clippath id="reply-A">
+          <path
+            d="M24.07 63.5l35.164 29.133V76.856h17.554c23.974.857 23.824 10.362 26.467 18.281.124.368.674.271.674-.117V67.728c0-17.288-19.096-19.596-27.141-19.596-3.652 0 0-.028 0-.028H59.234V32.632z"
+          />
+        </clippath>
+        <g clip-path="url(#reply-A)">
+          <mask id="reply-B">
+            <g clip-path="url(#reply-C)">
+              <rect
+                x="24"
+                y="32"
+                width="80"
+                height="64"
+                class="shape"
+              />
             </g>
-          </g>
-        </g>
-        <g>
-          <clipPath id="achievements-D">
-            <path
-              d="M37.448 19.142v29.185c0 7.941 1.357 12.966 3.315 18.068l.05.132 4.468 8.17.055.082c4.862 7.206 7.348 8.917 11.418 10.226l.001 9.848-15.265 6.644v7.36h45.44v-7.36l-15.265-6.644v-9.848c4.071-1.309 6.557-3.02 11.418-10.226l.055-.082 4.468-8.17.051-.132c1.958-5.102 3.314-10.127 3.314-18.068V19.142z" />
-          </clipPath>
-          <g clip-path="url(#achievements-D)">
-            <rect x="37" y="19" width="54" height="90" class="shape" />
+          </mask>
+          <clippath id="reply-C">
+            <path d="M-32768 32896h65535v-65535h-65535z" />
+          </clippath>
+          <g mask="url(#reply-B)">
+            <rect
+              x="24"
+              y="32"
+              width="80"
+              height="64"
+              class="shape"
+            />
           </g>
         </g>
       </symbol>
@@ -69,14 +82,14 @@
   <!-- SVG gradient defs -->
   <svg width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <linearGradient id="strong-glue" gradientTransform="rotate(315)">
+      <lineargradient id="strong-glue" gradientTransform="rotate(315)">
         <stop offset="0%" stop-color="#d8dede" />
         <stop offset="74%" stop-color="#e5bdf6" />
-      </linearGradient>
+      </lineargradient>
     </defs>
   </svg>
 
-  <script src="script.js"></script>
+  <script src="./assets/scripts/script.js.js"></script>
 
 </body>
 </html>
